@@ -1,0 +1,6 @@
+package com.npobox.npobox
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
