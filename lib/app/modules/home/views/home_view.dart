@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:npobox/app/controllers/bottom_controller.dart';
 import 'package:npobox/app/modules/home/views/mypobox_page.dart';
+import 'package:npobox/app/routes/app_pages.dart';
 
 import '../../../../theme.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+  final bottomC = Get.find<HomeController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -326,6 +328,7 @@ class HomeView extends GetView<HomeController> {
           onPressed: () {},
           child: Icon(Icons.add),
           backgroundColor: orangeColor),
+      //----------
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
           shape: CircularNotchedRectangle(),
@@ -337,63 +340,113 @@ class HomeView extends GetView<HomeController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    itemBottomNavBar(
-                      gambar: "assets/icons/home.png",
-                      teks: "Home",
-                    ),
-                    itemBottomNavBar(
-                      gambar: "assets/icons/transaction.png",
-                      teks: "Transaction",
+                    MaterialButton(
+                      minWidth: 40,
+                      onPressed: () {
+                        Get.toNamed(Routes.HOME);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "assets/icons/home.png",
+                            width: 30,
+                            height: 30,
+                          ),
+                          Text(
+                            "Home",
+                            style: TextStyle(
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.3,
+                      width: MediaQuery.of(context).size.width * 0.05,
                     ),
-                    itemBottomNavBar(
-                      gambar: "assets/icons/email.png",
-                      teks: "Inbox",
+                    MaterialButton(
+                      minWidth: 40,
+                      onPressed: () {
+                        Get.toNamed(Routes.TRANSACTION_PAGE);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "assets/icons/transaction.png",
+                            width: 30,
+                            height: 30,
+                          ),
+                          Text(
+                            "Transaction",
+                            style: TextStyle(
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                    itemBottomNavBar(
-                      gambar: "assets/icons/person.png",
-                      teks: "Account",
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.22,
+                    ),
+                    MaterialButton(
+                      minWidth: 40,
+                      onPressed: () {
+                        Get.toNamed(Routes.INBOX_PAGE);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "assets/icons/email.png",
+                            width: 30,
+                            height: 30,
+                          ),
+                          Text(
+                            "Inbox",
+                            style: TextStyle(
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.05,
+                    ),
+                    MaterialButton(
+                      minWidth: 40,
+                      onPressed: () {
+                        Get.toNamed(Routes.PROFILE_PAGE);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            "assets/icons/person.png",
+                            width: 30,
+                            height: 30,
+                          ),
+                          Text(
+                            "Account",
+                            style: TextStyle(
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 )
               ],
             ),
           )),
-    );
-  }
-}
-
-class itemBottomNavBar extends StatelessWidget {
-  final String gambar;
-  final String teks;
-  itemBottomNavBar({required this.gambar, required this.teks});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialButton(
-      minWidth: 40,
-      onPressed: () {},
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            gambar,
-            width: 30,
-            height: 30,
-          ),
-          Text(
-            teks,
-            style: TextStyle(
-              fontSize: 9,
-              fontWeight: FontWeight.bold,
-            ),
-          )
-        ],
-      ),
     );
   }
 }

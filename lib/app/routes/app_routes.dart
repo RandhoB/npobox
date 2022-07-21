@@ -10,6 +10,8 @@ abstract class Routes {
   static const PEMBAYARAN_QRIS = _Paths.PEMBAYARAN_QRIS;
   static const INTRO_PAGE = _Paths.INTRO_PAGE;
   static const PROFILE_PAGE = _Paths.PROFILE_PAGE;
+  static const TRANSACTION_PAGE = _Paths.TRANSACTION_PAGE;
+  static const INBOX_PAGE = _Paths.INBOX_PAGE;
 }
 
 abstract class _Paths {
@@ -21,4 +23,6 @@ abstract class _Paths {
   static const PEMBAYARAN_QRIS = '/pembayaran-qris';
   static const INTRO_PAGE = '/intro-page';
   static const PROFILE_PAGE = '/profile-page';
+  static const TRANSACTION_PAGE = '/transaction-page';
+  static const INBOX_PAGE = '/inbox-page';
 }

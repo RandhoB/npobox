@@ -18,14 +18,17 @@ class IntroPageView extends StatelessWidget {
           title: "NPOBOX",
           body: "Semangat untuk lebih berkembang\nYakin Bisa !",
           image: Center(
-            child: Lottie.asset('assets/lottie/plane.json'),
-          ),
+              child: Image.asset(
+            'assets/splash_screen1.png',
+          )),
         ),
         PageViewModel(
           title: "Percaya!",
           body: "Proses tidak akan mengkhianati hasil !!!",
           image: Center(
-            child: Lottie.asset('assets/lottie/planet.json'),
+            child: Image.asset(
+              'assets/splash_screen2.png',
+            ),
           ),
         ),
       ],

@@ -26,6 +26,7 @@ class SplashPageView extends GetView<SplashPageController> {
                 .map((image) => Image.asset(
                       image,
                       fit: BoxFit.cover,
+                      height: MediaQuery.of(context).size.height,
                     ))
                 .toList(),
             options: CarouselOptions(
@@ -42,7 +43,7 @@ class SplashPageView extends GetView<SplashPageController> {
             children: [],
           ),
           SizedBox(
-            height: 30,
+            height: 80,
           ),
           GestureDetector(
             onTap: () {

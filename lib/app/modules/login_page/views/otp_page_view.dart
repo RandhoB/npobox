@@ -51,17 +51,15 @@ class OtpPageView extends GetView {
                 SizedBox(
                   height: 22,
                 ),
-                Form(
-                    child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    OtpItem(),
-                    OtpItem(),
-                    OtpItem(),
-                    OtpItem(),
-                    OtpItem(),
-                  ],
-                )),
+                Obx(
+                  () => Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      ...controller
+                          .getAllCode(), // spread collection (titik 3),
+                    ],
+                  ),
+                ),
                 SizedBox(
                   height: 22,
                 ),
@@ -101,51 +99,33 @@ class OtpPageView extends GetView {
                 SizedBox(
                   height: 38,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
                   children: [
-                    OtpAngka(
-                      Pelengkap: "1",
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        OtpAngka(number: 1),
+                        OtpAngka(number: 2),
+                        OtpAngka(number: 3),
+                      ],
                     ),
-                    OtpAngka(
-                      Pelengkap: "2",
+                    SizedBox(height: 26),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        OtpAngka(number: 4),
+                        OtpAngka(number: 5),
+                        OtpAngka(number: 6),
+                      ],
                     ),
-                    OtpAngka(
-                      Pelengkap: "3",
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 26,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    OtpAngka(
-                      Pelengkap: "4",
-                    ),
-                    OtpAngka(
-                      Pelengkap: "5",
-                    ),
-                    OtpAngka(
-                      Pelengkap: "6",
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 26,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    OtpAngka(
-                      Pelengkap: "7",
-                    ),
-                    OtpAngka(
-                      Pelengkap: "8",
-                    ),
-                    OtpAngka(
-                      Pelengkap: "9",
+                    SizedBox(height: 26),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        OtpAngka(number: 7),
+                        OtpAngka(number: 8),
+                        OtpAngka(number: 9),
+                      ],
                     ),
                   ],
                 ),
@@ -156,14 +136,10 @@ class OtpPageView extends GetView {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     OtpAngkaKosong(
-                      Pelengkap: "",
+                      number: "",
                     ),
-                    OtpAngka(
-                      Pelengkap: "0",
-                    ),
-                    OtpSimbol(
-                      Pelengkap: "assets/Back.png",
-                    ),
+                    OtpAngka(number: 0),
+                    OtpSimbol(),
                   ],
                 ),
                 SizedBox(

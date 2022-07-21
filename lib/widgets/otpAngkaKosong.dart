@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../theme.dart';
 
 class OtpAngkaKosong extends StatelessWidget {
-  OtpAngkaKosong({required this.Pelengkap});
+  OtpAngkaKosong({required this.number});
 
-  final String Pelengkap;
+  final String number;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class OtpAngkaKosong extends StatelessWidget {
           borderRadius: BorderRadius.circular(35), color: Colors.transparent),
       child: Center(
         child: Text(
-          Pelengkap,
+          number,
           style: TextStyle(
             fontSize: 32,
             fontWeight: FontWeight.bold,
