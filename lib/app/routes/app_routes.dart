@@ -12,6 +12,7 @@ abstract class Routes {
   static const PROFILE_PAGE = _Paths.PROFILE_PAGE;
   static const TRANSACTION_PAGE = _Paths.TRANSACTION_PAGE;
   static const INBOX_PAGE = _Paths.INBOX_PAGE;
+  static const ONBOARDING_PAGE = _Paths.ONBOARDING_PAGE;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const PROFILE_PAGE = '/profile-page';
   static const TRANSACTION_PAGE = '/transaction-page';
   static const INBOX_PAGE = '/inbox-page';
+  static const ONBOARDING_PAGE = '/onboarding-page';
 }

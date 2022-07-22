@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:npobox/app/controllers/bottom_controller.dart';
 import 'package:npobox/app/modules/home/views/mypobox_page.dart';
 import 'package:npobox/app/routes/app_pages.dart';
 

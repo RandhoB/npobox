@@ -8,6 +8,8 @@ import '../modules/intro_page/bindings/intro_page_binding.dart';
 import '../modules/intro_page/views/intro_page_view.dart';
 import '../modules/login_page/bindings/login_page_binding.dart';
 import '../modules/login_page/views/login_page_view.dart';
+import '../modules/onboarding_page/bindings/onboarding_page_binding.dart';
+import '../modules/onboarding_page/views/onboarding_page_view.dart';
 import '../modules/pembayaran_qris/bindings/pembayaran_qris_binding.dart';
 import '../modules/pembayaran_qris/views/pembayaran_qris_view.dart';
 import '../modules/pemesanan_pobox/bindings/pemesanan_pobox_binding.dart';
@@ -24,7 +26,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH_PAGE;
+  static const INITIAL = Routes.ONBOARDING_PAGE;
 
   static final routes = [
     GetPage(
@@ -70,7 +72,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.TRANSACTION_PAGE,
-      page: () => const TransactionPageView(),
+      page: () => TransactionPageView(),
       binding: TransactionPageBinding(),
       transition: Transition.noTransition,
     ),
@@ -79,6 +81,11 @@ class AppPages {
       page: () => const InboxPageView(),
       binding: InboxPageBinding(),
       transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: _Paths.ONBOARDING_PAGE,
+      page: () => OnboardingPageView(),
+      binding: OnboardingPageBinding(),
     ),
   ];
 }

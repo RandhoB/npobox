@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:npobox/app/modules/profile_page/views/camera_page_view.dart';
 import 'package:npobox/app/modules/profile_page/views/contact_us_view.dart';
 
 import '../../../../theme.dart';
@@ -15,7 +16,7 @@ class ProfilePageView extends GetView<ProfilePageController> {
       resizeToAvoidBottomInset: false, //untuk agar button floating tidak muncul
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(25),
           child: ListView(
             children: [
               Row(
@@ -23,7 +24,7 @@ class ProfilePageView extends GetView<ProfilePageController> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.back();
+                      Get.toNamed(Routes.HOME);
                     },
                     child: Image.asset(
                       "assets/icons/Back2.png",
@@ -100,7 +101,7 @@ class ProfilePageView extends GetView<ProfilePageController> {
                         child: TextField(
                           autocorrect: false,
                           textInputAction: TextInputAction.next,
-                          keyboardType: TextInputType.phone,
+                          keyboardType: TextInputType.number,
                           decoration: InputDecoration(),
                         ),
                       ),
@@ -167,7 +168,9 @@ class ProfilePageView extends GetView<ProfilePageController> {
                     children: [
                       InkWell(
                         splashColor: Colors.black,
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(CameraPageView());
+                        },
                         child: Container(
                           width: 156,
                           height: 40,

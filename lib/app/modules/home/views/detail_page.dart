@@ -22,9 +22,6 @@ class DetailPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: titleColor),
                 ),
-                SizedBox(
-                  height: 35,
-                ),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
@@ -216,7 +213,7 @@ class DetailPage extends StatelessWidget {
                               date: "arrival date: 27 Juli 2022",
                             ),
                             SizedBox(
-                              height: 100,
+                              height: Get.height,
                             ),
                           ],
                         ),

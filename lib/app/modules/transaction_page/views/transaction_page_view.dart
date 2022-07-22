@@ -7,143 +7,116 @@ import '../../../routes/app_pages.dart';
 import '../controllers/transaction_page_controller.dart';
 
 class TransactionPageView extends GetView<TransactionPageController> {
-  const TransactionPageView({Key? key}) : super(key: key);
+  int index = 0;
+  final items = List.generate(2000, (counter) => 'Judul: $counter');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('TransactionPageView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'TransactionPageView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.add),
-          backgroundColor: orangeColor),
-      //----------
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-          shape: CircularNotchedRectangle(),
-          notchMargin: 10,
-          child: Container(
-            height: 60,
-            width: 60,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    MaterialButton(
-                      minWidth: 40,
-                      onPressed: () {
-                        Get.toNamed(Routes.HOME);
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/icons/home.png",
-                            width: 30,
-                            height: 30,
-                          ),
-                          Text(
-                            "Home",
-                            style: TextStyle(
-                              fontSize: 9,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                        ],
+      body: Column(
+        children: [
+          Container(
+            width: Get.width,
+            height: Get.height * 0.2,
+            color: orangeColor,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                right: 25,
+                left: 25,
+                top: 40,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(Routes.HOME);
+                        },
+                        child: Image.asset(
+                          "assets/icons/Back2.png",
+                          width: 26,
+                          height: 26,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.05,
-                    ),
-                    MaterialButton(
-                      minWidth: 40,
-                      onPressed: () {
-                        Get.toNamed(Routes.TRANSACTION_PAGE);
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/icons/transaction.png",
-                            width: 30,
-                            height: 30,
-                          ),
-                          Text(
-                            "Transaction",
-                            style: TextStyle(
-                              fontSize: 9,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                        ],
+                      SizedBox(
+                        width: 10,
                       ),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.22,
-                    ),
-                    MaterialButton(
-                      minWidth: 40,
-                      onPressed: () {
-                        Get.toNamed(Routes.INBOX_PAGE);
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/icons/email.png",
-                            width: 30,
-                            height: 30,
+                      Text(
+                        "Transaction History",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: Get.height * 0.05,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          //buat page history yg masih in progress
+                        },
+                        child: Text(
+                          "In Progress",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
                           ),
-                          Text(
-                            "Inbox",
-                            style: TextStyle(
-                              fontSize: 9,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                        ],
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.05,
-                    ),
-                    MaterialButton(
-                      minWidth: 40,
-                      onPressed: () {
-                        Get.toNamed(Routes.PROFILE_PAGE);
-                      },
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/icons/person.png",
-                            width: 30,
-                            height: 30,
+                      InkWell(
+                        onTap: () {
+                          //buat page history yang sudah completed
+                        },
+                        child: Text(
+                          "Completed",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
                           ),
-                          Text(
-                            "Account",
-                            style: TextStyle(
-                              fontSize: 9,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                        ],
+                        ),
                       ),
-                    ),
-                  ],
-                )
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
-          )),
+          ),
+          Expanded(
+            child: ListView.separated(
+              separatorBuilder: (context, index) =>
+                  Divider(color: Colors.black),
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                final item = items[index];
+
+                return ListTile(
+                  leading: Image.asset(
+                    "assets/icons/document.png",
+                    width: 39,
+                  ),
+                  title: Text(item),
+                  subtitle: Text("Tanggal | Jam"),
+                  trailing: Text(
+                    "Rp. Rupiah",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

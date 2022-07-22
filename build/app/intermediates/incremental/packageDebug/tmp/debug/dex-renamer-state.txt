@@ -1,4 +1,4 @@
-#Thu Jul 21 15:55:53 WIB 2022
+#Fri Jul 22 16:18:58 WIB 2022
 base.0=/Users/randhobagaskara/Flutter-Bagas/npobox/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
