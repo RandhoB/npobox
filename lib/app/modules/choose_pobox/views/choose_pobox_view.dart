@@ -172,7 +172,7 @@ class itemMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: Get.width,
-      height: Get.height * 0.2,
+      height: Get.height * 0.3,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(15),

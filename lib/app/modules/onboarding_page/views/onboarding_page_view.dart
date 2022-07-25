@@ -53,7 +53,7 @@ class _OnboardingPageViewState extends State<OnboardingPageView> {
                       children: [
                         Image.asset(
                           contents[i].image,
-                          height: MediaQuery.of(context).size.height * 0.5,
+                          height: MediaQuery.of(context).size.height * 0.35,
                         ),
                         Row(
                           children: [
