@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/choose_pobox/bindings/choose_pobox_binding.dart';
+import '../modules/choose_pobox/views/choose_pobox_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/inbox_page/bindings/inbox_page_binding.dart';
@@ -49,7 +51,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PEMESANAN_POBOX,
-      page: () => const PemesananPoboxView(),
+      page: () => PemesananPoboxView(),
       binding: PemesananPoboxBinding(),
     ),
     GetPage(
@@ -86,6 +88,11 @@ class AppPages {
       name: _Paths.ONBOARDING_PAGE,
       page: () => OnboardingPageView(),
       binding: OnboardingPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.CHOOSE_POBOX,
+      page: () => const ChoosePoboxView(),
+      binding: ChoosePoboxBinding(),
     ),
   ];
 }

@@ -106,10 +106,17 @@ class ProfilePageView extends GetView<ProfilePageController> {
                         ),
                       ),
                       SizedBox(
-                        width: 50,
+                        width: 65,
                       ),
                       Text(
                         "Change",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       SizedBox(

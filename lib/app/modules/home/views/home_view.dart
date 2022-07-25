@@ -124,7 +124,7 @@ class HomeView extends GetView<HomeController> {
                   namaButton1: "Rent Now",
                   namaButton2: "My PO Box",
                 ),
-                menuStack(
+                menuStack2(
                   warnaBackground: WBiruMuda,
                   gambar:
                       "assets/images/Travelling by plane with one suitcase.png",
@@ -537,20 +537,25 @@ class menuStack extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Container(
-                    alignment: Alignment.center,
-                    width: 83,
-                    height: 27,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(9),
-                        color: Colors.white),
-                    child: Text(
-                      namaButton1,
-                      style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff837169)),
-                      textAlign: TextAlign.center,
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed(Routes.PEMESANAN_POBOX);
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 83,
+                      height: 27,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(9),
+                          color: Colors.white),
+                      child: Text(
+                        namaButton1,
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff837169)),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -560,6 +565,108 @@ class menuStack extends StatelessWidget {
                     onTap: () {
                       Get.to(MypoboxPage());
                     },
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 83,
+                      height: 27,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(9),
+                          color: Colors.white),
+                      child: Text(
+                        namaButton2,
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: orangeColor),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class menuStack2 extends StatelessWidget {
+  final String namaJudul;
+  final String namaButton1;
+  final String namaButton2;
+  final Color warnaBackground;
+  final String gambar;
+
+  menuStack2({
+    required this.warnaBackground,
+    required this.namaJudul,
+    required this.gambar,
+    required this.namaButton1,
+    required this.namaButton2,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          width: MediaQuery.of(context).size.width,
+          height: 127,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(27), color: warnaBackground),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Image.asset(
+              gambar,
+              width: 122,
+              height: 156,
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 18),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                namaJudul,
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 83,
+                      height: 27,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(9),
+                          color: Colors.white),
+                      child: Text(
+                        namaButton1,
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff837169)),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  GestureDetector(
+                    onTap: () {},
                     child: Container(
                       alignment: Alignment.center,
                       width: 83,

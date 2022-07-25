@@ -13,6 +13,7 @@ abstract class Routes {
   static const TRANSACTION_PAGE = _Paths.TRANSACTION_PAGE;
   static const INBOX_PAGE = _Paths.INBOX_PAGE;
   static const ONBOARDING_PAGE = _Paths.ONBOARDING_PAGE;
+  static const CHOOSE_POBOX = _Paths.CHOOSE_POBOX;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const TRANSACTION_PAGE = '/transaction-page';
   static const INBOX_PAGE = '/inbox-page';
   static const ONBOARDING_PAGE = '/onboarding-page';
+  static const CHOOSE_POBOX = '/choose-pobox';
 }

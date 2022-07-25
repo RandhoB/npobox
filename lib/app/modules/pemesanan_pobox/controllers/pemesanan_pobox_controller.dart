@@ -1,23 +1,22 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PemesananPoboxController extends GetxController {
   //TODO: Implement PemesananPoboxController
 
-  final count = 0.obs;
+  late TextEditingController tController;
+
   @override
   void onInit() {
+    // TODO: implement onInit
     super.onInit();
+    tController = TextEditingController();
   }
 
   @override
-  void onReady() {
-    super.onReady();
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    tController.dispose();
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
