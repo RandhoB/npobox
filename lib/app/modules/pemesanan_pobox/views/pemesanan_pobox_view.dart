@@ -47,6 +47,7 @@ class PemesananPoboxView extends GetView<PemesananPoboxController> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(5),
                 child: TextFormField(
+                  focusNode: FocusNode(),
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: medium,
