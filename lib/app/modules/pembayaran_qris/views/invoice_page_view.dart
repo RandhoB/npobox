@@ -12,7 +12,7 @@ class InvoicePageView extends GetView {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.only(
@@ -58,13 +58,13 @@ class InvoicePageView extends GetView {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Time Left",
+                        "Order Status",
                         style: TextStyle(
                           fontSize: 15,
                         ),
                       ),
                       Text(
-                        "00:04:51",
+                        "Completed",
                         style: TextStyle(
                           fontSize: 15,
                           color: Color(0xffF63535),
@@ -149,10 +149,6 @@ class InvoicePageView extends GetView {
                                 ),
                               ],
                             ),
-                            Image.asset(
-                              "assets/icons/Back.png",
-                              width: 20,
-                            )
                           ],
                         ),
                       ),
@@ -175,160 +171,22 @@ class InvoicePageView extends GetView {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Payment Method",
+                      "RENT INFO",
                       style: TextStyle(
                         fontWeight: bold,
-                        fontSize: 18,
-                        color: Color(0xff776D6D),
+                        fontSize: 15,
+                        color: orangeColor,
                       ),
                     ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      "e-Wallet",
-                      style: TextStyle(color: Color(0xff776D6D), fontSize: 16),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    itemLayanan(
-                      logo: "assets/logos/pospay.png",
-                      nama: "Pospay",
-                      promo: "(Casback 10%)",
-                      button: "assets/icons/buttonPutih.png",
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    itemLayanan(
-                      logo: "assets/logos/gopay.png",
-                      nama: "Gopay",
-                      promo: "",
-                      button: "assets/icons/buttonPutih.png",
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    itemLayanan(
-                      logo: "assets/logos/qris.png",
-                      nama: "QRIS",
-                      promo: "",
-                      button: "assets/icons/buttonIsi.png",
-                    ),
-                    SizedBox(
-                      height: 27,
-                    ),
-                    Text(
-                      "ATM & Internet Banking",
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xff776D6D),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    itemLayanan(
-                        logo: "assets/logos/bca_va.png",
-                        nama: "BCA Virtual Account",
-                        promo: "",
-                        button: "assets/icons/buttonPutih.png"),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    itemLayanan(
-                        logo: "assets/logos/bni_va.png",
-                        nama: "BNI Virtual Account",
-                        promo: "",
-                        button: "assets/icons/buttonPutih.png"),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    itemLayanan(
-                        logo: "assets/logos/mandiri_va.png",
-                        nama: "Mandiri Virtual Account",
-                        promo: "",
-                        button: "assets/icons/buttonPutih.png"),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: Get.width * 0.6,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: orangeColor,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "PAY NOW",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 100,
-              ),
+              )
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class itemLayanan extends StatelessWidget {
-  final String logo;
-  final String nama;
-  final String? promo;
-  final String button;
-  itemLayanan(
-      {required this.logo,
-      required this.nama,
-      this.promo,
-      required this.button});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.asset(
-          logo,
-          width: 64,
-          height: 30,
-        ),
-        SizedBox(
-          width: 15,
-        ),
-        Expanded(
-            child: Text(
-          nama,
-          style: TextStyle(fontWeight: bold, fontSize: 17),
-        )),
-        Text(promo!),
-        SizedBox(
-          width: 100,
-        ),
-        Image.asset(
-          button,
-          width: 18,
-        )
-      ],
     );
   }
 }

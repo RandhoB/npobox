@@ -53,10 +53,11 @@ class AppPages {
       name: _Paths.PEMESANAN_POBOX,
       page: () => PemesananPoboxView(),
       binding: PemesananPoboxBinding(),
+      transition: Transition.noTransition,
     ),
     GetPage(
       name: _Paths.PEMBAYARAN_QRIS,
-      page: () => const PembayaranQrisView(),
+      page: () => PembayaranQrisView(),
       binding: PembayaranQrisBinding(),
       transition: Transition.noTransition,
     ),
@@ -68,7 +69,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PROFILE_PAGE,
-      page: () => const ProfilePageView(),
+      page: () => ProfilePageView(),
       binding: ProfilePageBinding(),
       transition: Transition.noTransition,
     ),
@@ -80,7 +81,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.INBOX_PAGE,
-      page: () => const InboxPageView(),
+      page: () => InboxPageView(),
       binding: InboxPageBinding(),
       transition: Transition.noTransition,
     ),
@@ -88,11 +89,13 @@ class AppPages {
       name: _Paths.ONBOARDING_PAGE,
       page: () => OnboardingPageView(),
       binding: OnboardingPageBinding(),
+      transition: Transition.noTransition,
     ),
     GetPage(
       name: _Paths.CHOOSE_POBOX,
-      page: () => const ChoosePoboxView(),
+      page: () => ChoosePoboxView(),
       binding: ChoosePoboxBinding(),
+      transition: Transition.noTransition,
     ),
   ];
 }
