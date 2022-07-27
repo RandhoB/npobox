@@ -171,6 +171,7 @@ class InvoicePageView extends GetView {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "RENT INFO",
@@ -180,13 +181,168 @@ class InvoicePageView extends GetView {
                         color: orangeColor,
                       ),
                     ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    itemRent(
+                      nama: "Cost PO Box Enterprise",
+                      tahun: "1 Tahun",
+                      rupiah: "Rp. 2.000.000",
+                    ),
+                    SizedBox(height: 6),
+                    Divider(
+                      color: Color(0xffB1A0A0),
+                      height: 2,
+                      thickness: 1,
+                    ),
+                    itemRent(
+                      nama: "Addons Terima Barang",
+                      tahun: "1 Tahun",
+                      rupiah: "Rp. 1.000.000",
+                    ),
+                    SizedBox(height: 6),
+                    Divider(
+                      color: Color(0xffB1A0A0),
+                      height: 2,
+                      thickness: 1,
+                    ),
+                    itemRent(
+                      nama: "Paket Free Forwarding",
+                      tahun: "1 Tahun",
+                      rupiah: "Rp. 600.000",
+                    ),
+                    SizedBox(height: 6),
+                    Divider(
+                      color: Color(0xffB1A0A0),
+                      height: 2,
+                      thickness: 1,
+                    ),
+                    itemRent(
+                      nama: "Pengiriman dan Biaya Kunci",
+                      tahun: "",
+                      rupiah: "Rp. 50.000",
+                    ),
+                    SizedBox(height: 6),
+                    Divider(
+                      color: Color(0xffB1A0A0),
+                      height: 2,
+                      thickness: 1,
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Total Payment",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: bold,
+                          ),
+                        ),
+                        Text(
+                          "Rp. 3.650.000",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Payment Method",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xff545250),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Image.asset(
+                          "assets/logos/qris.png",
+                          width: 44,
+                          height: 16,
+                        )
+                      ],
+                    ),
+                    Text(
+                      "*Resi pengiriman kunci akan di infokan via chat WA",
+                      style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        color: Color(0xff545250),
+                      ),
+                    ),
+                    Row(
+                      children: [],
+                    )
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class itemRent extends StatelessWidget {
+  final String nama;
+  final String rupiah;
+  final String? tahun;
+
+  itemRent({required this.nama, required this.rupiah, this.tahun});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 6,
+            ),
+            Text(
+              nama,
+              style: TextStyle(
+                fontSize: 15,
+                color: Color(0xff545250),
+              ),
+            ),
+            Text(
+              tahun!,
+              style: TextStyle(
+                fontStyle: FontStyle.italic,
+                color: Color(0xff545250),
+              ),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            SizedBox(
+              height: 6,
+            ),
+            Text(
+              rupiah,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: bold,
+              ),
+            ),
+          ],
+        )
+      ],
     );
   }
 }
