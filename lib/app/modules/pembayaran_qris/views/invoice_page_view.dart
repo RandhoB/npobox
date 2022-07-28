@@ -279,9 +279,136 @@ class InvoicePageView extends GetView {
                         color: Color(0xff545250),
                       ),
                     ),
+                    SizedBox(
+                      height: 15,
+                    ),
                     Row(
-                      children: [],
-                    )
+                      children: [
+                        Image.asset(
+                          "assets/images/mail-invoice.png",
+                          width: 47,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  "PO Box : ",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: bold,
+                                    color: Color(0xff545250),
+                                  ),
+                                ),
+                                Text(
+                                  "PO Box 1900",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Color(0xff545250),
+                                  ),
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Address : ",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: bold,
+                                    color: Color(0xff545250),
+                                  ),
+                                ),
+                                Text(
+                                  "Gedung Pos Ibukota Jakarta",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Color(0xff545250),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "RENT INFO",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: bold,
+                        color: Color(0xff545250),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    itemInfo(
+                      nama: "Order Complete Date",
+                      bulan: "12 Jul 2022, ",
+                      jam: "10:00",
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    itemInfo(
+                      nama: "Booking Date",
+                      bulan: "12 Jul 2022, ",
+                      jam: "09:57",
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            "Booking ID",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Color(0xff545250),
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "ID0231Q11829POBOX",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: bold,
+                            color: Color(0xff545250),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      children: [
+                        itemButton(
+                          nama: "SEND EMAIL",
+                          width: 1,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        itemButton(
+                          nama: "SAVE PDF",
+                          width: 4,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 100,
+                    ),
                   ],
                 ),
               ),
@@ -289,6 +416,89 @@ class InvoicePageView extends GetView {
           ),
         ),
       ),
+    );
+  }
+}
+
+class itemButton extends StatelessWidget {
+  final String nama;
+  final double width;
+
+  itemButton({required this.nama, required this.width});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: () {},
+        child: Container(
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(7),
+            border: Border.all(
+              width: width,
+              color: orangeColor,
+            ),
+          ),
+          child: Center(
+            child: Text(
+              nama,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: bold,
+                color: orangeColor,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class itemInfo extends StatelessWidget {
+  final String nama;
+  final String bulan;
+  final String jam;
+
+  itemInfo({required this.nama, required this.bulan, required this.jam});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+          child: Text(
+            nama,
+            style: TextStyle(
+              fontSize: 15,
+              color: Color(0xff545250),
+            ),
+          ),
+        ),
+        Row(
+          children: [
+            Text(
+              bulan,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: bold,
+                color: Color(0xff545250),
+              ),
+            ),
+            Text(
+              jam,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: bold,
+                color: Color(0xff545250),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
