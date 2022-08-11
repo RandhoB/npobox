@@ -19,7 +19,11 @@ class LoginPageView extends GetView<LoginPageController> {
             height: 20,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 55, right: 55),
+            padding: const EdgeInsets.only(
+              left: 55,
+              right: 55,
+              top: 55,
+            ),
             child: Image.asset(
               "assets/image_login.png",
               width: MediaQuery.of(context).size.width,
@@ -56,7 +60,7 @@ class LoginPageView extends GetView<LoginPageController> {
                         Text(
                           "+62 - ",
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w300),
+                              fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                         Expanded(
                             child: TextField(
@@ -105,29 +109,31 @@ class LoginPageView extends GetView<LoginPageController> {
                 SizedBox(
                   height: 14,
                 ),
-                Center(
-                  child: Image.asset(
-                    "assets/or.png",
-                    width: 178,
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    MenuItemSignUp(
-                        image: "assets/Google.png", warna: orangeColor),
-                    MenuItemSignUp(
-                      image: "assets/Facebook.png",
-                      warna: blueColor,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 34,
-                ),
+                //--------Termasuk menu yang belum di aktifkan-------
+                // Center(
+                //   child: Image.asset(
+                //     "assets/or.png",
+                //     width: 178,
+                //   ),
+                // ),
+                // SizedBox(
+                //   height: 15,
+                // ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                //   children: [
+                //     MenuItemSignUp(
+                //         image: "assets/Google.png", warna: orangeColor),
+                //     MenuItemSignUp(
+                //       image: "assets/Facebook.png",
+                //       warna: blueColor,
+                //     ),
+                //   ],
+                // ),
+                // SizedBox(
+                //   height: 34,
+                // ),
+                //-------------Sampai sini--------------
                 Center(
                   child: RichText(
                       textAlign: TextAlign.center,
