@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Color whiteColor = Color(0xffFFFFFF);
-Color titleColor = Color(0xff31616D);
-Color subtitleColor = Color(0xff467E8D);
-Color orangeColor = Color(0xffF37135);
-Color textfieldColor = Color(0xffEBE4E1);
-Color blueColor = Color(0xff039BE5);
-Color buttonotpColor = Color(0xffFBE1E1);
+const Color whiteColor = Color(0xffFFFFFF);
+const Color titleColor = Color(0xff31616D);
+const Color subtitleColor = Color(0xff467E8D);
+const Color orangeColor = Color(0xffF37135);
+const Color textfieldColor = Color(0xffEBE4E1);
+const Color blueColor = Color(0xff039BE5);
+const Color buttonotpColor = Color(0xffFBE1E1);
 
 // Color WOrange = Color(0xffF37135);
-Color WHijauMudaGelap = Color(0xff31616D);
-Color WHijauMuda = Color(0xff4BA8BB);
-Color WBiru = Color(0xffF039BE5);
-Color WBiruMuda = Color(0xff4BA8BB);
-Color WAbu = Color(0xffEBE4E1);
-Color WOrangeMuda = Color(0xffFBE1E1);
-Color WCoklatMuda = Color(0xffCB6B55);
-Color WOrangeMudaGelap = Color(0xffF3EEEE);
-Color WPink = Color(0xffFCCECE);
-Color WTextTopUp = Color(0xffF776D6D);
+const Color WHijauMudaGelap = Color(0xff31616D);
+const Color WHijauMuda = Color(0xff4BA8BB);
+const Color WBiru = Color(0xffF039BE5);
+const Color WBiruMuda = Color(0xff4BA8BB);
+const Color WAbu = Color(0xffEBE4E1);
+const Color WOrangeMuda = Color(0xffFBE1E1);
+const Color WCoklatMuda = Color(0xffCB6B55);
+const Color WOrangeMudaGelap = Color(0xffF3EEEE);
+const Color WPink = Color(0xffFCCECE);
+const Color WTextTopUp = Color(0xffF776D6D);
 
-Color THijauMuda = Color(0xff467E8D);
-Color THijauMudaGelap = Color(0xff31616D);
+const Color THijauMuda = Color(0xff467E8D);
+const Color THijauMudaGelap = Color(0xff31616D);
 
 TextStyle titleTextStyle = GoogleFonts.roboto(
   fontSize: 32,
@@ -37,8 +37,8 @@ TextStyle buttonTextStyle = GoogleFonts.roboto(
   fontWeight: medium,
 );
 
-FontWeight light = FontWeight.w300;
-FontWeight regular = FontWeight.w400;
-FontWeight medium = FontWeight.w500;
-FontWeight semiBold = FontWeight.w600;
-FontWeight bold = FontWeight.w700;
+const FontWeight light = FontWeight.w300;
+const FontWeight regular = FontWeight.w400;
+const FontWeight medium = FontWeight.w500;
+const FontWeight semiBold = FontWeight.w600;
+const FontWeight bold = FontWeight.w700;
