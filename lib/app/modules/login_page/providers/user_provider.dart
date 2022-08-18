@@ -9,7 +9,13 @@ class UserProvider extends GetConnect {
       if (map is Map<String, dynamic>) return User.fromJson(map);
       if (map is List) return map.map((item) => User.fromJson(item)).toList();
     };
-    httpClient.baseUrl = 'https://newpoboxdev.posindonesia.co.id:4000/login';
+    httpClient.baseUrl = 'https://newpoboxdev.posindonesia.co.id:4000/';
+    //Modul Login
+    //login -> Get
+    //checkUser -> Get
+    //OTPcheck -> Post
+
+    //+ apakah modul User juga dimasukkan disini
   }
 
   Future<User?> getUser(int id) async {
