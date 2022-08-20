@@ -12,7 +12,8 @@ import 'package:npobox/app/modules/login_page/views/enter_pin_view.dart';
 import 'package:npobox/theme.dart';
 
 class OtpPageView extends GetView {
-  // final otpC = Get.find<LoginPageController>();
+  final otpC = Get.find<LoginPageController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -8,7 +8,9 @@ import 'package:npobox/theme.dart';
 import '../controllers/login_page_controller.dart';
 
 class LoginPageView extends GetView<LoginPageController> {
-  const LoginPageView({Key? key}) : super(key: key);
+  final loginPageController = Get.find<LoginPageController>();
+  // var whatsapp = "6282310119696";
+  // var text = "Req OTP POBOX";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,24 +59,29 @@ class LoginPageView extends GetView<LoginPageController> {
                         SizedBox(
                           width: 20,
                         ),
-                        Text(
-                          "+62 - ",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
+                        // Text(
+                        //   "+62 - ",
+                        //   style: TextStyle(
+                        //       fontSize: 16, fontWeight: FontWeight.bold),
+                        // ),
                         Expanded(
-                            child: TextField(
-                          // controller: ,
-                          textInputAction: TextInputAction.done,
-                          autocorrect: false,
-                          keyboardType: TextInputType.phone,
-                          decoration: InputDecoration.collapsed(
-                            hintText: "",
-                            border: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xffBEAAAA)),
+                          child: TextFormField(
+                            validator: (value) => value == null || value == ""
+                                ? "Data Tidak Boleh Kosong"
+                                : null,
+                            controller: loginPageController.controllerNoHP,
+                            textInputAction: TextInputAction.done,
+                            autocorrect: false,
+                            keyboardType: TextInputType.phone,
+                            decoration: InputDecoration.collapsed(
+                              hintText: "",
+                              border: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Color(0xffBEAAAA)),
+                              ),
                             ),
                           ),
-                        )),
+                        ),
                         SizedBox(
                           width: 20,
                         )
@@ -88,9 +95,14 @@ class LoginPageView extends GetView<LoginPageController> {
                 //dibawah ini dibutuhkan perbandingan dengan database jika nomor
                 //ada di database maka ke enter pin
                 //jika nomor belum  terdaftar maka ke verify phone
-                GestureDetector(
+                InkWell(
                   onTap: () {
-                    Get.off(EnterPinView());
+                    if (controller.formKey.currentState!.validate()) {
+                      controller.formKey.currentState!.save();
+                      controller.checkUser();
+                    }
+
+                    // FlutterOpenWhatsapp.sendSingleMessage('$whatsapp', '$text');
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width,
@@ -106,6 +118,7 @@ class LoginPageView extends GetView<LoginPageController> {
                     ),
                   ),
                 ),
+
                 SizedBox(
                   height: 14,
                 ),

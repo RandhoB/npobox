@@ -14,6 +14,9 @@ abstract class Routes {
   static const INBOX_PAGE = _Paths.INBOX_PAGE;
   static const ONBOARDING_PAGE = _Paths.ONBOARDING_PAGE;
   static const CHOOSE_POBOX = _Paths.CHOOSE_POBOX;
+  static const OTP_PAGE = _Paths.OTP_PAGE;
+  static const ENTER_PIN = _Paths.ENTER_PIN;
+  static const CREATE_PIN = _Paths.CREATE_PIN;
 }
 
 abstract class _Paths {
@@ -29,4 +32,7 @@ abstract class _Paths {
   static const INBOX_PAGE = '/inbox-page';
   static const ONBOARDING_PAGE = '/onboarding-page';
   static const CHOOSE_POBOX = '/choose-pobox';
+  static const OTP_PAGE = '/otp-page';
+  static const ENTER_PIN = '/enter-pin';
+  static const CREATE_PIN = '/create-pin';
 }
